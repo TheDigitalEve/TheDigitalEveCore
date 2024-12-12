@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 252 97% 5%;
+    --foreground: 0 0% 100%;
+    --card: 252 97% 3%;
+    --card-foreground: 0 0% 100%;
+    --popover: 252 97% 3%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 252 100% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 252 50% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 252 50% 12%;
+    --muted-foreground: 252 10% 80%;
+    --accent: 252 100% 68%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 252 50% 12%;
+    --input: 252 50% 12%;
+    --ring: 252 100% 68%;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.font-terminal {
+  font-family: 'VT323', monospace;
+}
+
+.font-retro {
+  font-family: 'Silkscreen', cursive;
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  @apply font-bold tracking-wide text-2xl md:text-3xl lg:text-4xl;
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.5),
+               0 0 20px rgba(124, 58, 237, 0.3),
+               0 0 30px rgba(124, 58, 237, 0.2);
+}
+
+h2, h3 {
+  font-family: 'Silkscreen', cursive;
+  @apply font-bold tracking-wide;
+}
+
+h4, h5, h6 {
+  font-family: 'VT323', monospace;
+  @apply font-bold tracking-normal text-lg;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  @apply leading-relaxed tracking-wide;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    to right,
+    #ff6b6b,
+    #cc2b5e,
+    #753a88
+  );
+}
+
+.gradient-text-2 {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    to right,
+    #fc00ff,
+    #00dbde
+  );
+}
+
+.gradient-text-3 {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    to right,
+    #7303c0,
+    #ec38bc,
+    #fdeff9
+  );
+}
+
+.eve-card {
+  @apply bg-black/20 backdrop-blur-sm border border-violet-500/20;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1),
+              inset 0 0 20px rgba(124, 58, 237, 0.1);
+  background-image: 
+    radial-gradient(circle at center, rgba(124, 58, 237, 0.05) 0%, transparent 70%),
+    linear-gradient(to bottom right, rgba(139, 92, 246, 0.05), rgba(67, 56, 202, 0.05));
+}
+
+.eve-border {
+  @apply relative overflow-hidden;
+  &::before {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, #fc00ff, #00dbde, #fc00ff);
+    background-size: 200% 100%;
+    animation: borderGradient 3s linear infinite;
+  }
+}
+
+.pixel-border {
+  @apply relative p-1;
+  background: linear-gradient(90deg, #fc00ff, #00dbde);
+  clip-path: polygon(
+    0 5px, 5px 0, calc(100% - 5px) 0, 100% 5px,
+    100% calc(100% - 5px), calc(100% - 5px) 100%,
+    5px 100%, 0 calc(100% - 5px)
+  );
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.8; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.2); }
+}
+
+.glow-effect {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.web3-tag {
+  @apply inline-flex items-center px-3 py-1 text-sm font-terminal;
+  background: linear-gradient(45deg, #fc00ff 0%, #00dbde 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(252, 0, 255, 0.3);
+}
+
+.noise-background {
+  @apply fixed inset-0 z-0 opacity-[0.015];
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.meme-button {
+  @apply px-6 py-3 font-pixel text-sm relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(45deg, #fc00ff 0%, #00dbde 100%);
+  border: 2px solid transparent;
+  box-shadow: 0 0 15px rgba(252, 0, 255, 0.3);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(252, 0, 255, 0.5);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #ff00de,
+               0 0 30px #ff00de,
+               0 0 40px #ff00de;
+}
+
+.holographic {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: holographic 3s ease infinite;
+}
+
+@keyframes holographic {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
