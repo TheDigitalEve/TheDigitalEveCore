@@ -25,7 +25,7 @@ export default function Header() {
            className="text-knowledge-blue hover:text-eden-green transition-colors">
           <Github size={28}/>
         </a>
-        <a href="https://pump.fun" target="_blank" rel="noopener noreferrer"
+        <a href="https://pump.fun/coin/8BQdCZt4hdbbn62bYgN2LrFf2pvMeZt8xaqZqHN3pump" target="_blank" rel="noopener noreferrer"
            className="text-knowledge-blue hover:text-eden-green transition-colors">
           <Pill size={28}/>
         </a>
