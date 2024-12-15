@@ -1,4 +1,7 @@
-import {Github, Pill, Twitter} from 'lucide-react'
+import {Pill} from 'lucide-react'
+import {FaGithub, FaXTwitter} from "react-icons/fa6"
+import {FaTelegramPlane} from "react-icons/fa";
+import DexScreenerIcon from "@/components/DexScreenerIcon";
 
 export default function Footer() {
   return (
@@ -8,15 +11,25 @@ export default function Footer() {
         <div className="flex space-x-4">
           <a href="https://x.com/TheEVE_AI" target="_blank" rel="noopener noreferrer"
              className="text-knowledge-blue hover:text-eden-green transition-colors">
-            <Twitter size={28}/>
+            <FaXTwitter size={28}/>
+          </a>
+          <a href="https://t.me/eveportalsol" target="_blank"
+             rel="noopener noreferrer"
+             className="text-knowledge-blue hover:text-eden-green transition-colors">
+            <FaTelegramPlane size={28}/>
           </a>
           <a href="https://github.com/TheDigitalEve/TheDigitalEveCore" target="_blank" rel="noopener noreferrer"
              className="text-knowledge-blue hover:text-eden-green transition-colors">
-            <Github size={28}/>
+            <FaGithub size={28}/>
           </a>
-          <a href="https://pump.fun/coin/8BQdCZt4hdbbn62bYgN2LrFf2pvMeZt8xaqZqHN3pump" target="_blank" rel="noopener noreferrer"
+          <a href="https://pump.fun/coin/8BQdCZt4hdbbn62bYgN2LrFf2pvMeZt8xaqZqHN3pump" target="_blank"
+             rel="noopener noreferrer"
              className="text-knowledge-blue hover:text-eden-green transition-colors">
             <Pill size={28}/>
+          </a>
+          <a href="https://dexscreener.com/solana/2inpwy6noqlykbk8mzrdanjzbdcttjor34gprbdkqckq" target="_blank" rel="noopener noreferrer"
+             className="text-knowledge-blue hover:text-eden-green transition-colors">
+            <DexScreenerIcon size={28}/>
           </a>
         </div>
       </div>
